@@ -7,7 +7,7 @@ export class APIService {
   name: string;
   email: string;
   address: string;
-  phonenumber: string;
+  phonenumber: number;
   companyname: string;
   UserList: object[] = [];
 
@@ -45,7 +45,7 @@ export class APIService {
   AddUser(): void {
     if (this.UserList.length != 0) {
       var lastId = this.UserList[this.UserList.length - 1]["id"];
-      var obj: object = { "id": lastId + 1, "name": this.name, "email": this.email, "phone": this.phonenumber, "address": this.address, "company": this.companyname };
+      var obj: object = { "id": lastId + 1, "name": this.name, "email": this.email, "phonenumber": this.phonenumber, "address": this.address, "company": this.companyname };
     }
     this.UserList.push(obj);
     console.log(this.name);
